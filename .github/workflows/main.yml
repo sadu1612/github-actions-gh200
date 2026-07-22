@@ -1,13 +1,30 @@
-name: gh-200
-
+name: GH-200-Class
+ 
 on: push
-
+ 
 jobs:
   hello-world:
     runs-on: ubuntu-latest
     steps:
       - name: Say Hello
-        run: echo "Hello gh 200"
-
+        run: echo "Hello from GH-200 Session!!!"
+ 
       - name: Checkout
         uses: actions/checkout@v6
+ 
+      - name: List files
+        run: ls -la
+ 
+      - name: Install Third party tool
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y figlet
+          echo "figlet ready"
+ 
+      - name: Generate ASCII Artwork
+        run: |
+          figlet "GH-200"
+          echo "---------------------"
+          figlet -f digital "GITHUB ACTIONS"
+          echo "---------------------"
+          figlet -f slant "Day1"
