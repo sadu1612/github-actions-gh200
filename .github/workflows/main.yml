@@ -1,0 +1,13 @@
+name: gh-200
+
+on: push
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hello
+        run: echo "Hello gh 200"
+
+      - name: Checkout
+        uses: actions/checkout@v6
